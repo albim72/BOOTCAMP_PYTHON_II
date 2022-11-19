@@ -24,4 +24,12 @@ print(mojakrotka)
 #zmodyfikuj krotkę: usuń wartość 89, zamień imię "Urszula" na "Karol"
 #wstaw na pozycji 4 wartość 100, wastaw na końcu listy False
 
+mojalista = list(mojakrotka)
+mojalista.remove(89)
+ur = mojalista.index("Urszula")
+mojalista[ur] = "Karol"
+mojalista.insert(4,100)
+mojalista.append(False)
 
+mojakrotka = tuple(mojalista)
+print(mojakrotka)

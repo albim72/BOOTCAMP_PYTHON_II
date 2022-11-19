@@ -28,3 +28,19 @@ owoce = [
     ('mandarynka',9.88),
     ('winogrono',12.55)
 ]
+
+eo = enumerate(owoce)
+print(list(eo))
+
+print("*********** CENNIK OWOCÓW ********************")
+for i,(nazwa,cena) in enumerate(owoce):
+    print('#%d: %-10s = %6.2f' %(i,nazwa,cena))
+
+
+print("*********** CENNIK OWOCÓW INACZEJ ********************")
+for i,(nazwa,cena) in enumerate(owoce):
+    print('#%d: %-10s = %6.2f' %(
+        i+1,
+        nazwa.title(),
+        round(cena,1)
+    ))

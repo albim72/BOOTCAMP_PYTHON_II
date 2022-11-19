@@ -21,3 +21,32 @@ match kolor:
         print("twój wybór to czerwony płaszcz")
     case _:
         print("nie ma ciuchów w taakim kolorze!")
+
+#instrukcja iteracyjna -> pętla
+
+i=1
+while i<=6:
+    print(i)
+    if i==4:
+        break
+    i+=1
+else:
+    print("ostatecznie i wynosi:",i)
+
+owoce = ["jabłko","banan","kiwi","malina","pomarańcza"]
+
+print(owoce)
+print("___________lista owoców___________________")
+for owoc in owoce:
+    print(owoc)
+
+cechy = ["kolorowy","elegancki","brudny","kosztowny","obdrapany"]
+obiekty = ["smaochód","budynek","płaszcz","przystanek","kapelusz"]
+
+
+for ch in cechy:
+    for ob in obiekty:
+        print(ch,ob)
+
+
+

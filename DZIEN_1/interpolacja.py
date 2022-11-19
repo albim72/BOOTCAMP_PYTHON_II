@@ -14,3 +14,17 @@ student = f"dane studenta -> imię: {imie}, wiek: {wiek}, uczelnia: {uczelnia}, 
 
 print(osoba.format(imie,kolor_oczu,wiek,miasto))
 print(student)
+
+id = 'abc01'
+wart = 1.64346754675
+
+formatowanie =  '%-30s = %.2f' %(id,wart)
+print(formatowanie)
+
+owoce = [
+    ('awokado',6.99),
+    ('jabłko',3.56),
+    ('banan',4.99),
+    ('mandarynka',9.88),
+    ('winogrono',12.55)
+]

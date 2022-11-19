@@ -33,3 +33,13 @@ mojalista.append(False)
 
 mojakrotka = tuple(mojalista)
 print(mojakrotka)
+
+
+samochod = ("audi","Q7",4.5,2018,56700)
+(marka,model,poj,rok,przebieg) = samochod
+
+print(marka)
+print(model)
+print(poj)
+print(rok)
+print(przebieg)

@@ -1,0 +1,5 @@
+animal = ("kot","pies","szynszyla","papuga","tygrys","boa")
+print(animal)
+print(type(animal))
+print(animal[5])
+print(animal[2:4])

@@ -1,6 +1,8 @@
 #n!=1*2*....*n
 #doble -> 1.8E308
 #????n -> 171!
+import sys
+sys.set_int_max_str_digits(1000000000)
 
 def silnia(n):
     if n<0:

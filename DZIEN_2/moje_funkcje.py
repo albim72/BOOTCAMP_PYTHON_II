@@ -25,3 +25,18 @@ obywatel(876876867,"Chiny")
 obywatel(423465656,"Norwegia")
 obywatel(98756565)
 
+#funkcja nr 3
+def pt(n):
+    return n**3
+
+def oblicz(a:int,b:int,x:int) -> int:
+    __fm = (a+b)*x + pt(b)
+    return __fm
+
+print(oblicz(3,6,2))
+print(oblicz(6.88,-1.7,22))
+print(pt(5))
+print(oblicz(True,True,True))
+
+
+

@@ -28,3 +28,9 @@ f = open("message.txt","r",encoding="utf-8")
 print(f.read())
 f.close()
 
+if os.path.exists("message.txt"):
+    os.remove("message.txt")
+    print("plik został usunięty!")
+else:
+    print("plik nie istnieje!")
+    

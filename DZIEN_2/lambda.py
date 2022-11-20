@@ -32,3 +32,23 @@ def warunek(x):
 
 nparz2 = list(filter(warunek,nb))
 print(nparz2)
+
+#stwórz listę cube, do której przekarzesz wartości z listy nb podniesione do potęgi 3
+
+cube = list(map(lambda x:x**3,nb))
+print(cube)
+
+#funkcje wyższego rzędu:
+
+def filtrowanie(dane,test):
+    plus=[]
+    for element in dane:
+        if(test(element)):
+            plus.append(element)
+    return plus
+
+def tescik(n):
+    return n>=100
+
+ml = [7,4,5,9,122,167,9,-5,34,23,5,0]
+print(filtrowanie(ml,tescik))

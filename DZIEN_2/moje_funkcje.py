@@ -38,5 +38,17 @@ print(oblicz(6.88,-1.7,22))
 print(pt(5))
 print(oblicz(True,True,True))
 
+#funkcja nr 4
+def miasta(miasto3,miasto2="Rzeszów",miasto1="Kraków",miesiąc="styczeń"):
+    print(f"miesiąc zestawienia: {miesiąc} -- miasto miesiąca: {miasto1}, "
+          f"drugie miejsce: {miasto2}, trzecie miejsce: {miasto3}")
+
+
+miasta("Toruń","Kielce","Gdynia")
+miasta("Toruń","Kielce")
+miasta("Toruń")
+#wpisz maisto3 oraz miasto1, pozostaw domyślne miasto Rzeszów
+
+miasta("Zamość",miasto1="Wrocław",miesiąc="luty")
 
 

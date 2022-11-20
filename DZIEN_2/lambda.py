@@ -52,3 +52,14 @@ def tescik(n):
 
 ml = [7,4,5,9,122,167,9,-5,34,23,5,0]
 print(filtrowanie(ml,tescik))
+
+def mapowanie(dane,transformacja):
+    mapa=[]
+    for element in dane:
+        mapa.append(transformacja(element))
+    return mapa
+
+def dodajPiec(n):
+    return n+5
+
+print(mapowanie(ml,dodajPiec))

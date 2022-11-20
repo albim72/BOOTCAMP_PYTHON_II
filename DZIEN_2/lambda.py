@@ -20,3 +20,15 @@ print(liczby)
 
 nb = [45,55,56,7,8,2,3,5,7,10,0,-11,-90,100,1001,-8]
 
+#stwórz listę nparz i przekaż do niej wszystkie wartości parzyste z listy nb
+#użyj funkcji standardowej filter -> gdzie pierwszym parameterm filter jest funkcja definiująca warunek
+#filtrowania, drugi parametr to źródło danych
+
+nparz = list(filter(lambda x:x%2==0,nb))
+print(nparz)
+
+def warunek(x):
+    return x%2==0
+
+nparz2 = list(filter(warunek,nb))
+print(nparz2)

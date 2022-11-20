@@ -39,8 +39,8 @@ print(pt(5))
 print(oblicz(True,True,True))
 
 #funkcja nr 4
-def miasta(miasto3,miasto2="Rzeszów",miasto1="Kraków",miesiąc="styczeń"):
-    print(f"miesiąc zestawienia: {miesiąc} -- miasto miesiąca: {miasto1}, "
+def miasta(miasto3,miasto2="Rzeszów",miasto1="Kraków",miesiac="styczeń"):
+    print(f"miesiąc zestawienia: {miesiac} -- miasto miesiąca: {miasto1}, "
           f"drugie miejsce: {miasto2}, trzecie miejsce: {miasto3}")
 
 
@@ -49,6 +49,18 @@ miasta("Toruń","Kielce")
 miasta("Toruń")
 #wpisz maisto3 oraz miasto1, pozostaw domyślne miasto Rzeszów
 
-miasta("Zamość",miasto1="Wrocław",miesiąc="luty")
+miasta("Zamość",miasto1="Wrocław",miesiac="luty")
 
 
+#funkcja nr 5
+
+def zamki(miesiac,*zamek,ulga):
+    print(f"miesiąc zestawienia: {miesiac} -- zamek miesiąca: {zamek[0]} -> zniżka: {ulga} zł, "
+          f"drugie miejsce: {zamek[1]}, trzecie miejsce: {zamek[2]}")
+
+
+zamki("luty","Malbork","Olsztyn","Lublin","Będzin",ulga=20)
+zamki("gurdzień","Janowiec","Malbork","Olsztyn","Chojnik","Lublin","Będzin",ulga=5)
+
+# zm = ["Olsztyn","Lublin","Będzin"]
+# zamki("luty",zm,"a","b")

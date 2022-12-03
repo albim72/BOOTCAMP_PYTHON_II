@@ -28,7 +28,7 @@ class Osoba:
         return self.waga/(self.wzrost/100)**2
     
     def opis_bmi(self):
-        if self.bmi <18.5:
+        if self.bmi() <18.5:
             return "niedowaga"
         elif self.bmi()<=25:
             return "waga prawidłowa"

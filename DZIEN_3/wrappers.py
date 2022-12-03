@@ -42,3 +42,20 @@ def info(i):
     print(f'informacja: {i}')
 
 info("nr 4645869548694856945")
+
+#dekorator typu repeater
+
+def repeater(n):
+    def wrapper(funkcja):
+        def inner(*args):
+            for i in range(n):
+                funkcja(*args)
+        return inner
+    return wrapper
+
+@repeater(n=5)
+def komunikat(k,n):
+    print(f'ważny komunikat: {k}, numer: {n}')
+
+komunikat("idzie zima",67)
+komunikat("Tomasz Tomaszewski",101)

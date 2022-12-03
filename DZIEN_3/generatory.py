@@ -34,3 +34,16 @@ def wznowienie(n,k):
 for i in wznowienie(7,8):
     print(f'zwrócono wartość: {i}')
 
+#generator z return
+def generator_ret():
+    for i in range(5):
+        if i==3:
+            print("przerwanie")
+            return
+        else:
+            yield i
+
+for t in generator_ret():
+    print(t)
+
+

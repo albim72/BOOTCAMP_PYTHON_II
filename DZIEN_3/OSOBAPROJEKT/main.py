@@ -31,7 +31,7 @@ st1.print_student()
 print(f"wiek za {za} lat: {st1.wiek_za_x_lat(za)}")
 print(f"czy osoba jest pracownikiem? [{st1.czypracownik()}]")
 
-print("___a___________ nowy student ________________")
+print("______________ nowy student ________________")
 st2 = Student("Olga",23,62,172,566546,"nauk społecznych","socjologia",4,
               "XYZ","sekretarka",1,2600)
 st2.print_osoba()
@@ -39,3 +39,14 @@ st2.print_student()
 st2.print_pracownik()
 print(f"wiek za {za} lat: {st2.wiek_za_x_lat(za)}")
 print(f"czy osoba jest pracownikiem? [{st2.czypracownik()}]")
+
+print("______________ nowy student ________________")
+#utwórz nowy obiekt Student, który nie jest pracownikiem ale jest sportowcem
+st3 = Student("Paweł",22,74,176,97654,"automatyka i informatyka","informatyka",3,
+              dysycyplina="biegi ultra", lataupr=4, zyciowka = "64km 8h 23min 5s")
+st3.print_osoba()
+st3.print_student()
+st3.infosport()
+print(f"wiek za {za} lat: {st3.wiek_za_x_lat(za)}")
+print(f"czy osoba jest pracownikiem? [{st3.czypracownik()}]")
+

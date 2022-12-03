@@ -9,10 +9,14 @@ def pomiarczasu(funkcja):
         print(f"czas wykonania funckji: {endtime-starttime} s")
     return wrapper
 
-
-
+def sleep(funkcja):
+    def wrapper():
+        time.sleep(4)
+        return funkcja()
+    return wrapper
 
 @pomiarczasu
+@sleep
 def big_lista():
     sum([i**18 for i in range(1000000)])
 
@@ -24,3 +28,4 @@ def szybszaopcja():
     sum(lt)
 
 szybszaopcja()
+

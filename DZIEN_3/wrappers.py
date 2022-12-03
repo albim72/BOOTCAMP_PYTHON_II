@@ -29,3 +29,16 @@ def szybszaopcja():
 
 szybszaopcja()
 
+#dekorator pobierający nazwę wykonywanej funkcji
+
+def debug(funkcja):
+    def wrapper(*args,**kwargs):
+        print(f'wołana funkcja to: {funkcja.__name__}')
+        funkcja(*args)
+    return wrapper
+
+@debug
+def info(i):
+    print(f'informacja: {i}')
+
+info("nr 4645869548694856945")

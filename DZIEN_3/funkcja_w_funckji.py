@@ -25,7 +25,7 @@ def rejestracja(oplata):
     def brak():
         return "jeśli nie uiścisz opłaty startowej w ciągu 3 dni zostaniesz skreslony z listy"
     def error():
-        return "właśiwe oznaczenia: 1 - wpłata, 0 - brak wpłaty"
+        return "właściwe oznaczenia: 1 - wpłata, 0 - brak wpłaty"
     if oplata == 1:
         return lista
     elif oplata == 0:
@@ -41,3 +41,30 @@ print(rejestracja(111)())
 print("_______________________________________")
 
 #przykład 3
+
+def startstop(funkcja):
+    def wrapper(*args):
+        print("_________________________")
+        print("startowanie procesu.....")
+        funkcja(*args)
+        print("kończenie procesu")
+        print("_________________________")
+    return wrapper
+
+def zawijanie(czego):
+    print(f"zawijanie {czego} w sreberka....")
+
+zw = startstop(zawijanie)
+zw("czekoladek")
+
+@startstop
+def dmuchanie(czego):
+    print(f"dmuchanie {czego} na urodziny....")
+
+dmuchanie("baloników")
+
+@startstop
+def fx(n):
+    print(f'{n**8-2}')
+
+fx(12)

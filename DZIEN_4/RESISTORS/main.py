@@ -1,6 +1,7 @@
 from oldresistor import OldResistor
 from resistor import Resistor
 from voltage import VoltageResistance
+from bounded import BoundedResistance
 
 
 r0 = OldResistor(10.2E2)
@@ -22,3 +23,11 @@ print(f"natężenie początkowe prądu wynosi: {r2.current} A")
 r2.voltage = 45
 print(f"natężenie prądu wynosi: {r2.current} A")
 print(f"napięcie prądu: {r2.voltage} V")
+
+r3 = BoundedResistance(2.2E3)
+print(f"______________ {r3.__class__.__name__} _______________")
+try:
+      r3.ohms = 3E3
+      print(f'oporność: {r3.ohms} om')
+except ValueError as v:
+      print(v)

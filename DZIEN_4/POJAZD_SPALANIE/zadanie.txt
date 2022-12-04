@@ -1,0 +1,7 @@
+#stwórz interfejs (klasę abstrakcyjną IDane)
+# w tej klasie stwórz metodę abstrakcyjną opispojazdu()
+#oraz drugą metodę abstrakcyjną silnik(rodzaj,poj,l_km)
+
+#dziedzicz ten interfejs przez klasę Pojazd - uzupełnij klasę o metody abstrakcyjne, dla metody opispojazdy dodaj pola -> marka,model,rocznik,cena
+#implementowane metody mają wypisywać dane zzwiazane z nimi (opis pojazdu i silnik)
+#uzupełnij obiekt o zaimplementowane metody w pliku main, dane zimplementowane podaj w formie innej niż funkcja input 

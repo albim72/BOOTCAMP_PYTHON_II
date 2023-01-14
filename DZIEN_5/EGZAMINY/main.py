@@ -1,6 +1,7 @@
 from homework import Homework
 from exam import OldExam
 from grade import Exam
+from specialgrade import NewExam
 
 jurek = Homework()
 jurek.grade = 94
@@ -33,3 +34,13 @@ second_exam.science_grade = 71
 second_exam.math_grade = 59
 print(f'Nauka -> ocena z drugiego egazminu: {second_exam.science_grade}')
 print(f'Nauka -> ocena z pierwszego egazminu: {first_exam.science_grade} -> błąd!!!')
+
+print("________ grade -> wersja poprawiona______________")
+
+first_exam = NewExam()
+first_exam.writing_grade = 88
+second_exam = NewExam()
+second_exam.writing_grade = 70
+
+print(f'Pisanie -> ocena z pierwszego egazminu: {first_exam.writing_grade}')
+print(f'Pisanie -> ocena z drugiego egazminu: {second_exam.writing_grade}')

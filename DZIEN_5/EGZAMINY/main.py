@@ -41,6 +41,9 @@ first_exam = NewExam()
 first_exam.writing_grade = 88
 second_exam = NewExam()
 second_exam.writing_grade = 70
+third_exam = NewExam()
+third_exam.writing_grade = 33
 
 print(f'Pisanie -> ocena z pierwszego egazminu: {first_exam.writing_grade}')
 print(f'Pisanie -> ocena z drugiego egazminu: {second_exam.writing_grade}')
+print(f'Pisanie -> ocena z trzeciego egazminu: {third_exam.writing_grade}')

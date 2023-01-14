@@ -15,3 +15,14 @@ def fill(bucket,amount):
         bucket.quota = 0
         bucket.reset_time = now
     bucket.quota += amount
+    
+def deduct(bucket,amount):
+    now = datetime.now()
+    if(now-bucket.reset_time) > bucket.period_delta:
+        return False #Wiadro nie zostało napełnione
+    if bucket.quota - amount < 0:
+        return False #Wiadro napełnione tylko częściowo
+    bucket.quota -= amount
+    return True #Wiadro jest napełnione
+
+

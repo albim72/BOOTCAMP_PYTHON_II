@@ -24,3 +24,9 @@ def bsort_modern(a):
 
 bsort_modern(nazwa_modern)
 print(nazwa_modern)
+
+nb = [45,7,2,34,67,89]
+
+nb[0],nb[1],nb[2],nb[5] = nb[2],nb[5],nb[1],nb[0]
+
+print(nb)

@@ -1,4 +1,4 @@
-def zajdz_sume_liczb_pierwszych(minimum,maximum):
+def znajdz_sume_liczb_pierwszych(minimum,maximum):
     total = 0
     for number in range(minimum,maximum+1):
         count = 0
@@ -8,5 +8,5 @@ def zajdz_sume_liczb_pierwszych(minimum,maximum):
                 break
         if count == 0 and number != 1:
             total+=number
-            
+
     return total

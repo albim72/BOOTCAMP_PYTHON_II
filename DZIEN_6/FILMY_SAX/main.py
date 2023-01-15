@@ -1,7 +1,7 @@
 import xml.sax
 
 class UchwytFilmu(xml.sax.ContentHandler):
-    
+
     def __init__(self):
         self.CurrentData = ""
         self.id = ""
@@ -10,12 +10,12 @@ class UchwytFilmu(xml.sax.ContentHandler):
         self.kraj = ""
         self.czas_t = ""
         self.gatunek = ""
-        
+
     def startElement(self,tag,attributes):
         self.CurrentData = tag
         if tag == "film":
             print("_____________ FILM _________________")
-            
+
     def endElement(self,tag):
         if self.CurrentData == "id_filmu":
             print(f'identyfikator filmu: {self.id}')
@@ -29,3 +29,18 @@ class UchwytFilmu(xml.sax.ContentHandler):
             print(f'czas trwania filmu: {self.czas_t}')
         elif self.CurrentData == "gaatunek":
             print(f'gatunek filmu: {self.gatunek}')
+
+    def characters(self,content):
+        if self.CurrentData == "id_filmu":
+            self.id = content
+        elif self.CurrentData == "tytul":
+            self.tytul = content
+        elif self.CurrentData == "rok":
+            self.rok = content
+        elif self.CurrentData == "kraj":
+            self.kraj = content
+        elif self.CurrentData == "czas_trwania":
+            self.czas_t = content
+        elif self.CurrentData == "gatunek":
+            self.gatunek = content
+            

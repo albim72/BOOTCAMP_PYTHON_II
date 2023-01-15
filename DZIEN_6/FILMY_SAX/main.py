@@ -8,6 +8,7 @@ class UchwytFilmu(xml.sax.ContentHandler):
         self.tytul = ""
         self.rok = ""
         self.kraj = ""
+        self.seria = ""
         self.czas_t = ""
         self.gatunek = ""
 
@@ -25,6 +26,8 @@ class UchwytFilmu(xml.sax.ContentHandler):
             print(f'rok produkcji filmu: {self.rok}')
         elif self.CurrentData == "kraj":
             print(f'kraj produkcji filmu: {self.kraj}')
+        elif self.CurrentData == "seria":
+            print(f'rodzaj serii filmowej: {self.seria}')
         elif self.CurrentData == "czas_trwania":
             print(f'czas trwania filmu: {self.czas_t}')
         elif self.CurrentData == "gatunek":
@@ -39,6 +42,8 @@ class UchwytFilmu(xml.sax.ContentHandler):
             self.rok = content
         elif self.CurrentData == "kraj":
             self.kraj = content
+        elif self.CurrentData == "seria":
+            self.seria = content
         elif self.CurrentData == "czas_trwania":
             self.czas_t = content
         elif self.CurrentData == "gatunek":

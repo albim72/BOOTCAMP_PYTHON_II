@@ -6,6 +6,7 @@
     <rok>2019</rok>
     <kraj>USA</kraj>
     <czas_trwania>140</czas_trwania>
+    <seria>saga</seria>
     <gatunek>SF</gatunek>
     <opis_filmu></opis_filmu>
   </film>
@@ -23,6 +24,7 @@
     <tytul>Obecność 2</tytul>
     <rok>2015</rok>
     <kraj>USA</kraj>
+    <seria>seria</seria>
     <czas_trwania>121</czas_trwania>
     <gatunek>Horror</gatunek>
     <opis_filmu></opis_filmu>
@@ -50,6 +52,7 @@
     <tytul>Gwiezdne Wojny</tytul>
     <rok>2019</rok>
     <kraj>USA</kraj>
+    <seria>saga</seria>
     <czas_trwania>140</czas_trwania>
     <gatunek>SF</gatunek>
     <opis_filmu></opis_filmu>

@@ -27,7 +27,7 @@ class UchwytFilmu(xml.sax.ContentHandler):
             print(f'kraj produkcji filmu: {self.kraj}')
         elif self.CurrentData == "czas_trwania":
             print(f'czas trwania filmu: {self.czas_t}')
-        elif self.CurrentData == "gaatunek":
+        elif self.CurrentData == "gatunek":
             print(f'gatunek filmu: {self.gatunek}')
 
     def characters(self,content):
@@ -43,4 +43,11 @@ class UchwytFilmu(xml.sax.ContentHandler):
             self.czas_t = content
         elif self.CurrentData == "gatunek":
             self.gatunek = content
-            
+
+
+parser = xml.sax.make_parser()
+parser.setFeature(xml.sax.handler.feature_namespaces,0)
+
+handler = UchwytFilmu()
+parser.setContentHandler(handler)
+parser.parse("filmy.xml")

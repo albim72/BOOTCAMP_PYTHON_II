@@ -1,4 +1,4 @@
-CREATE TABLE `sklep`.`klient` (
+CREATE TABLE IF NOT EXISTS `sklep`.`klient` (
   `idklienta` INT NOT NULL AUTO_INCREMENT,
   `imie` VARCHAR(50) NOT NULL,
   `nazwisko` VARCHAR(50) NOT NULL,

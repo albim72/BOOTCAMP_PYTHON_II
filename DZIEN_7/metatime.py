@@ -45,3 +45,35 @@ def timefunc(fn,*args,**kwargs):
         return rt
 
     return fncomposite
+
+class Timed(type):
+    def __new__(cls, clsname,bases,dattrs):
+        for name, value in dattrs.items():
+            if type(value) is types.FunctionType or type(value) is types.MethodType:
+                dattrs[name] = timefunc(value)
+        return super(Timed,cls).__new__(cls, clsname,bases,dattrs)
+
+
+class Math(metaclass=Timed):
+    def multi(a,b):
+        p = a*b
+        print(p)
+        return p
+
+Math.multi(6,7)
+
+class Info(metaclass=Timed):
+    def intro(self):
+        print('to jest ważna informacja!')
+
+i = Info()
+i.intro()
+
+def divide(a,b):
+    wynik = a/b
+    print(wynik)
+    return wynik
+
+div = timefunc(divide)
+div(3,7)
+print(divide(4,8))

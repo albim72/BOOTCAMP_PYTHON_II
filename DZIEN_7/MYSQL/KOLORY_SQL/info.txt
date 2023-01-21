@@ -1,0 +1,5 @@
+Zadanie ->
+
+1. Stwórz plik kolory.py i zbuduj w nim model danych dla definicji koloru:
+  klasa Kolory -> konstruktor (nazwa_koloru, nazwa_palety)
+  zbuduj metody typu get i set dla tej klasy (po 2)

@@ -7,4 +7,5 @@ Zadanie ->
 2. Stwórz poboczny skrypt createtable.py
   zbuduj w nim połączenie z bazą dbtestowa i utwórz tabelę rozprezentującą klasę Kolor (klucz o nazwie idkoloru utwórz jak AUTOINCREMENT)
   
-  
+3. W pliku main.py zbuduj program słuący do dodawannia kolorów do tabeli z wykorzystaniem funkcji input -> napisz moduł służący do dodawania koloru (insert)
+i moduł służący do wyświetlania danych z tabeli

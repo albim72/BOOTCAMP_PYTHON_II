@@ -17,3 +17,15 @@ class SednoOdpowiedzi(type):
             cls.odpowiedz = odpowiedz
         else:
             cls.odpowiedz = brak
+
+class Arystoteles(metaclass=SednoOdpowiedzi):pass
+class Platon(metaclass=SednoOdpowiedzi):pass
+class SwTomasz(metaclass=SednoOdpowiedzi):pass
+
+fil1 = Arystoteles()
+fil2 = Platon()
+fil3 = SwTomasz()
+
+print(f'Filozof {fil1.__class__.__name__} mówi: {fil1.odpowiedz()}')
+print(f'Filozof {fil2.__class__.__name__} mówi: {fil2.odpowiedz()}')
+print(f'Filozof {fil3.__class__.__name__} mówi: {fil3.odpowiedz()}')

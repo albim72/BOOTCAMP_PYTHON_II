@@ -32,4 +32,16 @@ class Timer:
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.stop()
-        
+
+
+def timefunc(fn,*args,**kwargs):
+
+    def fncomposite(*args,**kwargs):
+        timer = Timer()
+        timer.start()
+        rt = fn(*args,**kwargs)
+        timer.stop()
+        print(f'wykonanie {fn.__name__} zajęło {timer.elapsed} s')
+        return rt
+
+    return fncomposite

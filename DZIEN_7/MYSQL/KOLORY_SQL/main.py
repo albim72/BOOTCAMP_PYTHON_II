@@ -1,6 +1,7 @@
 import mysql.connector
 from insertdata import dodawanie
 from selectdata import pokaz
+from filtr import filtr
 from  kolory import Kolory
 
 
@@ -14,3 +15,6 @@ print("____________________________")
 pokaz()
 
 print("____________________________")
+
+pal = input("podaj nazwę palety, aby wyfiltrować dane: ")
+filtr(pal)

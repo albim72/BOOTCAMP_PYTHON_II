@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `sklep`.`transakcja` (
+  `nr_faktury` INT NOT NULL,
+  `idklienta` INT NOT NULL,
+  `idtowaru` INT NOT NULL,
+  `data_sprzed` DATE NOT NULL,
+  `sprzedawca` VARCHAR(200) NULL,
+  PRIMARY KEY (`nr_faktury`),
+  UNIQUE INDEX `nr_faktury_UNIQUE` (`nr_faktury` ASC) VISIBLE);

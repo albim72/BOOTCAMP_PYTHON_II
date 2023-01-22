@@ -16,7 +16,7 @@ def cr():
             id integer PRIMARY KEY,
             name text NOT NULL,
             begin_date text NOT NULL,
-            end_date text NOT NULL,
+            end_date text NOT NULL
     );
     """
     sql_create_tasks_table = """

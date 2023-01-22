@@ -1,0 +1,6 @@
+1. Na serwerze MYSQL(Workbench) utwórz nową Schemę o nazwie Bookstore
+2. Napisz program oparty na sqlalchemy (importy)
+3. Zbuduj tabelę: books(bookid[int pk],tytul[String],autor[String],oprawa[String],lstron[int],cena[float-> Float]
+4. Zbuduj konstruktor repr -> opisz książkę
+5. Dodaj 3 rekordy
+6. Wyświetl rekordy

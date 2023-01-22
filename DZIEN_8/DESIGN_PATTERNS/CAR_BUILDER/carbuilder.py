@@ -8,18 +8,30 @@ class Engine:
 
 class Body:
     shape = None
-    
+
 class Car:
     def __init__(self):
         self._wheels = list()
         self._engine = None
         self._body = None
-        
+
     def setBody(self,body):
         self._body = body
-        
+
     def setEngine(self,engine):
         self._engine = engine
-        
+
     def attachWheel(self,wheel):
         self._wheels.append(wheel)
+        
+#struktura Builder
+
+class Builder(ABC):
+    @abstractmethod
+    def getWeel(self):pass
+
+    @abstractmethod
+    def getEngine(self): pass
+
+    @abstractmethod
+    def getBody(self): pass

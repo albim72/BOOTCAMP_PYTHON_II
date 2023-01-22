@@ -24,6 +24,11 @@ class Car:
     def attachWheel(self,wheel):
         self._wheels.append(wheel)
         
+    def specification(self):
+        print(f"rodzaj pojazdu: {self._body.shape}")
+        print(f"moc silnika [kM]: {self._engine.horsepower}")
+        print(f"śednica koła: {self._wheels[0].size}")
+
 #struktura Builder
 
 class Builder(ABC):
@@ -35,3 +40,55 @@ class Builder(ABC):
 
     @abstractmethod
     def getBody(self): pass
+
+#struktura Director
+
+class Director:
+    
+    __builder = None
+    
+    def setBuilder(self,builder):
+        self.__builder = builder
+        
+    def getCar(self):
+        car = Car()
+        
+        body = self.__builder.getBody()
+        car.getBody(body)
+
+        engine = self.__builder.getEngine()
+        car.getEngine(engine)
+        
+        i=0
+        while i<4:
+            wheel = self.__builder.getWheel()
+            car.attachWheel(wheel)
+            i+=1
+        return car
+    
+#ConcreteBuilder
+
+class Jeep(Builder):
+    def getWheel(self):
+        wheel = Wheel()
+        wheel.size = 22
+        return wheel
+
+    def getEngine(self):
+        engine = Engine()
+        engine.horsepower = 398
+        return engine
+
+    def getBody(self):
+        body = Body()
+        body.shape = "SUV"
+        return body
+    
+def main():
+    jeepBuilder = Jeep()
+    director = Director()
+    print("samochód -> Jeep Cheerokee")
+    director.setBuilder(jeepBuilder)
+    jeep = director.getCar()
+    jeep.specification()
+    print("\n")

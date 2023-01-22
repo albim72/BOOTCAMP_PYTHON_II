@@ -28,7 +28,7 @@ class Car:
 
 class Builder(ABC):
     @abstractmethod
-    def getWeel(self):pass
+    def getWheel(self):pass
 
     @abstractmethod
     def getEngine(self): pass

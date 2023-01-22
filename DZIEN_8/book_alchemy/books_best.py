@@ -19,3 +19,30 @@ engine = sqlalchemy.create_engine('mysql+mysqlconnector://root:abc123@localhost:
 s = sqlalchemy.inspect(engine).has_table("books_best")
 metadata.create_all(engine)
 print(s)
+
+inspector = inspect(engine)
+k = inspector.get_columns('books_best')
+print(k)
+
+with engine.connect() as conn:
+    data = (
+        {
+            "tytul":"Hobbit",
+            "autor":"J.R.R. Tolkien"
+        },
+        {
+            "tytul": "Wiedźmin",
+            "autor": "Andrzej Sapkowski"
+        }
+    )
+    statement = text("""
+        INSERT INTO books_best(tytul,autor) VALUES(:tytul,:autor)
+    """)
+
+    for line in data:
+        conn.execute(statement,**line)
+
+with engine.connect() as conn:
+    r = conn.execute('SELECT * FROM books_best')
+    for row in r:
+        print(row)

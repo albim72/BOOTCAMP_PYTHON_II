@@ -1,5 +1,7 @@
 from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QGridLayout,QLineEdit,QPushButton,QHBoxLayout
 from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtCore import Qt
 import sys
 
 
@@ -7,6 +9,47 @@ class Kalkulator(QWidget):
     def __init__(self,parent=None):
         super().__init__(parent)
         self.interfejs()
+
+    def closeEvent(self, event) -> None:
+        odp = QMessageBox.question(self,'Komunikat','Czy na pewno koniec?',
+                                   QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+
+        if odp == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
+
+    def keyPressEvent(self, e) -> None:
+        if e.key() == Qt.Key_Escape:
+            self.close()
+
+    def koniec(self):
+        self.close()
+
+    def dzialanie(self):
+        nadawca = self.sender()
+
+        try:
+            liczba1 = float(self.liczba1Edt.text())
+            liczba2 = float(self.liczba2Edt.text())
+            wynik=""
+
+            if nadawca.text() == "&Dodaj":
+                wynik = liczba1 + liczba2
+            elif nadawca.text() == "&Odejmij":
+                wynik = liczba1 - liczba2
+            elif nadawca.text() == "&Mnóż":
+                wynik = liczba1*liczba2
+            else:
+                try:
+                    wynik   = round(liczba1/liczba2,9)
+                except ZeroDivisionError:
+                    QMessageBox.critical(self,"Błąd","Nie można dzielić przez 0!")
+                    return
+            self.wynikEdt.setText(str(wynik))
+        except ValueError:
+            QMessageBox.warning(self,"Błąd","Błędne dane",QMessageBox.Ok)
+
 
     def interfejs(self):
 
@@ -58,6 +101,11 @@ class Kalkulator(QWidget):
         #self.resize(300,100)
         self.setGeometry(20,20,300,100)
         self.setWindowTitle("Prosty kalkulator")
+        koniecBtn.clicked.connect(self.koniec)
+        dodajBtn.clicked.connect(self.dzialanie)
+        odejmijBtn.clicked.connect(self.dzialanie)
+        mnozBtn.clicked.connect(self.dzialanie)
+        dzielBtn.clicked.connect(self.dzialanie)
         self.show()
 
 if __name__ == '__main__':

@@ -20,7 +20,7 @@ f.write(msg_ + "\n")
 f.close()
 
 def palindrom(word):
-    """Zwraca wartość True, jeśli podane słowo jest palindromem ->
+    """<strong>Zwraca wartość True, jeśli podane słowo jest palindromem</strong> ->
     czyli słowem które pisane w obu kierunkach jest identyczne
     np. kajak"""
     return word == word[::-1]

@@ -71,8 +71,8 @@ for ds_cnt, ds in enumerate(datasets):
     #kreślimy pierwszy zbiór
 
     cm = plt.cm.RdBu
-    cm_bright = ListedColormap(["FF0000","0000FF"])
-    ax = plt.subplot(len(datasets),len(classifiers)+1,1)
+    cm_bright = ListedColormap(["#FF0000","#0000FF"])
+    ax = plt.subplot(len(datasets),len(classifiers)+1,i)
 
     if ds_cnt == 0:
         ax.set_title("Dane wejściowe")
@@ -91,8 +91,33 @@ for ds_cnt, ds in enumerate(datasets):
         clf = make_pipeline(StandardScaler(),clf)
         clf.fit(X_train,y_train)
         score = clf.score(X_test,y_test)
-        
 
+        DecisionBoundaryDisplay.from_estimator(clf,X,cmap=cm,alpha=0.8,ax=ax,eps=0.5)
+
+        ax.scatter(
+            X_train[:,0],X_train[:,1],c=y_train,cmap=cm_bright, edgecolors="k"
+        )
+
+        ax.scatter(
+            X_test[:, 0], X_test[:,1], c=y_test, cmap=cm_bright, edgecolors="k",alpha=0.6
+        )
+
+        ax.set_xlim(x_min, x_max)
+        ax.set_ylim(y_min, y_max)
+        ax.set_xticks(())
+        ax.set_yticks(())
+
+        if ds_cnt == 0:
+            ax.set_title(name)
+        ax.text(
+            x_max - 0.3,
+            y_min + 0.3,
+            ("%.2f" %score).lstrip("0"),
+            size=15,
+            horizontalalignment = "right",
+        )
+
+        i+=1
 
 
 plt.tight_layout()

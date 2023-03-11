@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podstawy DOM</title>
+    <style>
+        body {
+            font-size: 14pt;
+            color: darkgray;
+            background-color: azure;
+        }
+        
+        h3 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
+        .zielony {
+            color: darkgreen;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15pt;
+        }
+        
+        p.czerwony {
+            color: crimson;
+            text-decoration: double;
+            font-size: 13pt;
+            font-stretch: extra-expanded;
+        }
+        
+        #super {
+            margin-left: 15%;
+            font-size: 18pt;
+            color: cadetblue;
+        }
+        
+        .warstwa {
+            position: absolute;
+            left: 10%;
+            top: 50%;
+            width: 400px;
+            height: 200px;
+            background-color: blanchedalmond;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        
+        .mwar {
+            position: absolute;
+            left: 17%;
+            top: 65%;
+            width: 100px;
+            height: 50px;
+            background-color: cyan;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        
+        #drugi {
+            font-size: 25pt;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>strona numer jeden...</h1>
+    <h3>omówienie <cite>struktury strony</cite></h3>
+    <p>Niedługo zaczyna się <strong>astrologiczna wiosna</strong>. Nie wiemy czy jeszcze będzie padał <b>śnieg</b>.
+    </p>
+    <p id="drugi">
+        <span style="font-size: 16pt; color: lightsalmon;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span> Quod repellat, at asperiores ipsam dicta veniam temporibus fuga, expedita harum cupiditate, voluptate libero unde necessitatibus
+        ipsum tenetur optio quas explicabo ex!
+    </p>
+    <p class="zielony">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla quasi dolore quam sapiente voluptatum eveniet? Quisquam cum quaerat excepturi repellat asperiores dignissimos aliquid, eveniet sunt magni hic amet corrupti neque!
+    </p>
+    <p class="czerwony">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab tenetur tempora quos incidunt, autem cumque, suscipit saepe at voluptate exercitationem mollitia adipisci dolorum magni, dolores minima magnam repellat neque doloremque!
+    </p>
+    <p id="super">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quasi ratione eos iste ea ab? Et quisquam facilis unde quo soluta, voluptatum exercitationem quibusdam delectus sit dicta eveniet aspernatur consequatur.
+    </p>
+    <!--
+    <p>
+        <center>
+            <font size="4">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa architecto voluptates in veniam quod rerum, modi, repellendus, similique cum iste ipsa. Vel corporis dignissimos, excepturi sit esse voluptatibus maiores praesentium?
+            </font>
+        </center>
+    </p>
+s
+    -->
+
+    <div class="warstwa">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam animi, voluptatum quibusdam expedita eaque impedit earum, ad accusamus corporis rerum, ea nemo nostrum magni? Beatae ullam laudantium autem quo dolores?
+    </div>
+    <div class="mwar">
+        Moje LOREM
+    </div>
+
+
+</body>
+
+</html>

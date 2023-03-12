@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API History</title>
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <style>
+        .mfont {
+            font-size: 16pt;
+            color: darkgrey;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <p class="display-4">Witaj w serwisie HISTORY</p>
+            <p class="mfont">Czy jesteś w Wąchocku?</p>
+            <div id="exhibit" class="mfont">Jesteś w Wąchocku.</div>
+            <br>
+            <button id="btnNextExhibit" class="btn btn-success">Odwiedź Olafa!</button>
+        </div>
+
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+    <script>
+        function init() {
+            var btnNextExhibit = document.getElementById("btnNextExhibit");
+            btnNextExhibit.addEventListener('click', nextExhibit, false);
+        }
+
+        function nextExhibit() {
+
+            //sprawdzenie czy jest dostępne metoda pushState w API History
+            if (typeof history.pushState !== 'undefined') {
+                history.pushState("Wąchock", "mieszkanie Olafa", "olaf.html");
+                document.getElementById("exhibit").innerHTML = "Składasz wizytę Olafowi...";
+            } else {
+                alert('API History jest niedostępne!');
+            }
+        }
+
+        window.addEventListener('load', init, false);
+    </script>
+</body>
+
+</html>

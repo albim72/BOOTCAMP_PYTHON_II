@@ -2,7 +2,7 @@ function checkStorage() {
     if (window.localStorage) {
         var key, value, field;
         for (var i = 0; i < localStorage.length; i++) {
-            key = localStorage.key();
+            key = localStorage.key(i);
             field = document.getElementById(key);
             if (field) {
                 value = unescape(localStorage.getItem(key));

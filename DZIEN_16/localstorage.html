@@ -17,19 +17,19 @@
             <form action="#">
                 <div class="form-group">
                     <label for="firstName">Podaj imię:</label>
-                    <input type="text" name="firstName" id="firstName" class="form-control">
+                    <input type="text" name="firstName" id="firstName" class="form-control" onchange="changeField(this);">
                 </div>
                 <div class="form-group">
                     <label for="lastName">Podaj nazwisko:</label>
-                    <input type="text" name="lastName" id="lastName" class="form-control">
+                    <input type="text" name="lastName" id="lastName" class="form-control" onchange="changeField(this);">
                 </div>
                 <div class="form-group">
                     <label for="email">Podaj e-mail:</label>
-                    <input type="email" name="email" id="email" class="form-control">
+                    <input type="email" name="email" id="email" class="form-control" onchange="changeField(this);">
                 </div>
                 <div class="phone">
                     <label for="phone">Podaj numer telefonu:</label>
-                    <input type="tel" name="phone" id="phone" class="form-control">
+                    <input type="tel" name="phone" id="phone" class="form-control" onchange="changeField(this);">
                 </div>
             </form>
         </div>
@@ -40,6 +40,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.4.1.js"></script>
+    <script src="js/storage.js"></script>
 </body>
 
 </html>

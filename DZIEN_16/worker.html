@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praca z asynchronicznym wątkiem roboczym</title>
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <style>
+        body {
+            font-size: 16pt;
+            color: cadetblue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h3>WEBSOCKET - asynchroniczne wątki robocze.</h3>
+            <br>
+
+            <p>Obliczanie <output id="result"></output></p>
+            <br>
+            <div id="buttons">
+                <button id="btnTimeStamp" class="btn btn-primary">Znacznik czasowy</button>
+                <button id="btnTerminateWorker" class="btn btn-warning">Zakończ wątek roboczy</button>
+                <section id="timeLog"></section>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+    <script>
+        var worker = null;
+
+        function startWorkerThead() {
+            var btnTimeStamp = document.getElementById("btnTimeStamp");
+            var btnTerminateWorker = document.getElementById("btnTerminateWorker");
+            btnTimeStamp.addEventListener("click", getTimeStamp, false);
+            btnTerminateWorker.addEventListener("click", terminateWorker);
+
+            worker = new Worker('js/procent.js');
+            worker.onmessage = function(event) {
+                document.getElementById('result').textContent = event.data;
+            };
+
+        }
+
+        function terminateWorker() {
+            worker.terminate();
+        }
+
+        function getTimeStamp() {
+            var currentDateTime = new Date();
+            document.getElementById('timeLog').innerHTML += currentDateTime + '<br>';
+        }
+
+        window.addEventListener('load', startWorkerThead, false);
+    </script>
+</body>
+
+</html>

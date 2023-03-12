@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>motywy -> SessionStorage</title>
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <style>
+        #themeContent {
+            background-color: #FFF;
+            border-style: solid;
+            border-width: 2px;
+        }
+        
+        #themeSettings {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <div id="themeContent">
+                <div id="themeSettings">
+                    <h2>Strona głowna motywu</h2>
+
+                    <div class="form-group">
+                        Wybierz motyw:
+                        <select name="themeColor" id="themeColor" class="form-control">
+                            <option id="default" value="">wybierz kolor...</option>
+                            <option id="blue" value="blue">niebieski</option>
+                            <option id="red" value="red">czerwony</option>
+                            <option id="yellow" value="yellow">żółty</option>
+                            <option id="green" value="green">zielony</option>
+                        </select>
+                    </div>
+
+                    <button id="resetTheme" class="btn btn-danger">Resetuj motyw</button>
+                    <br><br>
+                    <div id="theme"></div>
+                    <br><br>
+                    <a href="drugimotyw.html" class="btn btn-light">Przejdź do strony</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+</body>
+
+</html>

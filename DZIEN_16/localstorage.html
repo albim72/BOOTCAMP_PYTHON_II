@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formularz z użyciem pamięci lokalnej</title>
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Formularz z zapamiętywaniem danych</h2>
+        <br>
+        <div class="jumbotron">
+            <form action="#">
+                <div class="form-group">
+                    <label for="firstName">Podaj imię:</label>
+                    <input type="text" name="firstName" id="firstName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Podaj nazwisko:</label>
+                    <input type="text" name="lastName" id="lastName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">Podaj e-mail:</label>
+                    <input type="email" name="email" id="email" class="form-control">
+                </div>
+                <div class="phone">
+                    <label for="phone">Podaj numer telefonu:</label>
+                    <input type="tel" name="phone" id="phone" class="form-control">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+</body>
+
+</html>

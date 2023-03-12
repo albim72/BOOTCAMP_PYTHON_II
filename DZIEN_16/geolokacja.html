@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wyszukiwanie położenia geograficznego...</title>
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <h3>Twoje położenie geograficzne</h3>
+        <h4>poszukianie współrzędnych geograficznych z użyciem API GEOLOCATION</h4>
+        <br>
+        <div class="jumbotron">
+            <div id="btnFindMe">
+                <button type="button" id="findMe" class="btn btn-dark">Znajdź moje położenie</button>
+            </div>
+            <br>
+            <div id="MyLocation"></div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+
+    <script>
+        function init() {
+            var btnFindMe = document.getElementById('findMe');
+            btnFindMe.addEventListener('click', findMe, false);
+        }
+
+        function geoSuccess(position) {
+            var dateDisplay = new Date(position.timestamp);
+            var myLocationDiv = document.getElementById('MyLocation');
+
+            myLocationDiv.innerHTML = 'Szerokość geograficzna: ' + position.coords.latitude + '<br>' +
+                'Długość geograficzna: ' + position.coords.longitude + '<br>' +
+                'Dokładność położenia: ' + position.coords.accuracy + '<br>' +
+                'Wysokość(opcjonalnie): ' + position.coords.altitude + '<br>' +
+                'Dokładność wysokości: ' + position.coords.altitudeAccuracy + '<br>' +
+                'Kierunek(opcjonalnie): ' + position.coords.heading + '<br>' +
+                'Prędkość(opcjonalnie): ' + position.coords.speed + '<br>' +
+                'SPozycja DOMTimeStamp: ' + position.timestamp + '<br>' +
+                'Data i czas:' + dateDisplay.toLocaleString();
+        }
+
+        function findMe() {
+            var myLocationDiv = document.getElementById('MyLocation');
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(geoSuccess);
+                myLocationDiv.innerHTML = 'Uzyskiwanie informacji o Twoim położeniu';
+            } else {
+                myLocationDiv.innerHTML = 'Geolocation API nie jest dostępne';
+            }
+        }
+
+        window.addEventListener('load', init, false);
+    </script>
+</body>
+
+</html>

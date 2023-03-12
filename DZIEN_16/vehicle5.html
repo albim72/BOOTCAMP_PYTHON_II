@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obiektowość -> ECMA 5</title>
+</head>
+
+<body>
+    <h3>Tworzenie obiektów w standardzie ECMA 5</h3>
+    <script>
+        function Vehicle(name, type) {
+            this.name = name;
+            this.type = type;
+        }
+
+        Vehicle.prototype.getName = function getName() {
+            return this.name;
+        }
+
+        Vehicle.prototype.getType = function getType() {
+            return this.type;
+        }
+
+        function Car(name) {
+            Vehicle.call(this, name, 'car');
+        }
+
+        Car.prototype = Object.create(Vehicle.prototype);
+        Car.prototype.constructor = Car;
+        Car.parent = Vehicle.prototype;
+        Car.prototype.getName = function() {
+            return 'to jest samochód: ' + this.name;
+        }
+
+        //Tworzenie obiektu
+
+        var car = new Car('Tesla');
+        console.log(car.getName());
+        console.log(car.getType());
+    </script>
+</body>
+
+</html>

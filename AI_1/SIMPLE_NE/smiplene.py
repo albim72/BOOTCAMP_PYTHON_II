@@ -6,7 +6,7 @@ class SimpleNeuralNetwork:
         self.weights = 2*np.random.random((3,1))-1
 
     def __repr__(self):
-        return self.weights
+        return str(self.weights)
 
     def sigmoid(self,x):
         return 1/(1-np.exp(-x))

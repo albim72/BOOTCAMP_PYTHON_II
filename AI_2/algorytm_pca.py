@@ -27,7 +27,7 @@ ax.set_xlabel('Principal Component 1', fontsize=15)
 ax.set_ylabel('Principal Component 2', fontsize=15)
 ax.set_title('dwukomponentowe PCA', fontsize=20)
 
-targets = ['Iris - setosa','Iris - versicolor', 'Iris - virginica']
+targets = ['Iris-setosa','Iris-versicolor', 'Iris-virginica']
 colors = ['r','g','b']
 
 for target,color in zip(targets,colors):

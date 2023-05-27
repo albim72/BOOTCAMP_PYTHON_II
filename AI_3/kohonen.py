@@ -46,7 +46,7 @@ for i in range(nc):
 
 def distance(w,x):
     r=0,
-    for i in range(len(W)):
+    for i in range(len(w)):
         r = r+(w[i]-x[i])**2
     r = np.sqrt(r)
     return r
@@ -62,6 +62,7 @@ def findclosest(W,x):
             wm = w
             i_n = i
         i = i+1
+    return (wm,i_n)
 print(W)
 
 la =  0.3 #lambda
@@ -72,7 +73,7 @@ while la >=0:
         for x in X:
             wm = findclosest(W,x)[0]
             for i in range(len(wm)):
-                wm[i] = wm[i] + la*(x(i)-wm[i])
+                wm[i] = wm[i] + la*(x[i]-wm[i])
     la = la-dla
 
 Data = list()
@@ -81,9 +82,11 @@ for i in range(len(W)):
     Data.append(list())
 
 dfList = ds['class'].to_numpy()
+print(len(dfList))
+
 
 DS = list()
-
+i = 0
 for x in X:
     i_n = findclosest(W,x)[1]
     Data[i_n].append(x)

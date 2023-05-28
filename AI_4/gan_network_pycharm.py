@@ -207,17 +207,17 @@ def build_and_train_models():
     batch_size = 64
     train_steps = 40000
     lr = 2e-4
-    decay = 6e-8
+    #decay = 6e-8
     input_shape = (image_size,image_size,1)
 
     #konstruowanie modelu dyskryminatora
     inputs = Input(shape=input_shape, name='discriminator_input')
     discriminator = build_discriminator(inputs)
     #rezygnujemy z optimizera 'adam' -> dyskryminator szybciej osiąga zbieżność z RMSprop
-    optimizer = RMSprop(lr=lr,decay=decay)
+    optimizer = RMSprop(learning_rate=lr)
     discriminator.compile(loss='binary_crossentropy',
                           optimizer=optimizer,
-                          metrics=['accurracy'])
+                          metrics=['accuracy'])
     discriminator.summary()
 
     #konstruowanie modelu generatora
@@ -227,7 +227,7 @@ def build_and_train_models():
     generator.summary()
 
     #budowanie modelu sieci
-    optimizer = RMSprop(lr=lr*0.5,decay=decay*0.5)
+    optimizer = RMSprop(learning_rate=lr*0.5)
     #zamrożenie wag dyskryminatora przy trenowaniu sieci GAN
     discriminator.trainable = False
     #sieć współzawodnicząca(GAN) = generator + dyskryminator
@@ -249,8 +249,9 @@ def test_generator(generator):
                 noise_input=noise_input,
                 show=True,
                 model_name="test_outputs")
+
 if __name__ == '__main__':
-    
+
     #blok wykonawczy
     parser = argparse.ArgumentParser()
     help_ = "Ładowanie modelu generatora z wytrenowanymi wagami z pliku h5"
